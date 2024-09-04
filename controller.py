@@ -2,8 +2,13 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from service import UserService
 from model import SessionLocal
+from pydantic import BaseModel
 router = APIRouter()
 
+class UserCreate(BaseModel):
+    name: str
+    height: float
+    weight: float
 
 def get_db():
     db = SessionLocal()  
@@ -19,10 +24,10 @@ def get_allUsers(db: Session = Depends(get_db)):
     return [{"name":user.name, "height": user.height, "weight": user.weight} for user in users]
 
 @router.post("/api/user")
-def add_user(name:str, weight:float, height:float, db: Session = Depends(get_db)):
+def add_user(user: UserCreate, db: Session = Depends(get_db)):
     service = UserService(db)
     try:
-        service.add_user(name, weight, height)
+        service.add_user(user.name, user.height, user.height)
         return {"status": "successed"}
     except Exception as e:
         return {"status": "error"}

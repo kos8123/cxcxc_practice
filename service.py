@@ -7,5 +7,6 @@ class UserService:
     def list_allUser(self):
         return self.dao.get_allusers()
     def add_user(self, name: str, weight: float, height: float):
+        # print(name, weight, height)
         return self.dao.create_user(name, weight, height)
 

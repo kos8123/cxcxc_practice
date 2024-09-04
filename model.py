@@ -7,7 +7,7 @@ engine = create_engine("mysql+pymysql://root:Aa0909263940!@localhost/cxcxc_DB")
 SessionLocal = sessionmaker(bind=engine)
 database = declarative_base()
 
-class user(database):
+class User(database):
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(50), nullable=False)
