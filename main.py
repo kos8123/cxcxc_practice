@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from controller import router
 import uvicorn
-app = FastAPI()
+app = FastAPI(swagger_ui_parameters={"syntaxHighlight": False})
+
+
 
 app.include_router(router)
 

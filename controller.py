@@ -15,6 +15,7 @@ from linebot.v3.messaging import (
 )
 import google.generativeai as genai
 import json
+
 router = APIRouter()
 
 class UserCreate(BaseModel):
