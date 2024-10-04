@@ -34,9 +34,9 @@ def get_db():
     finally:
         db.close()
 
-handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
-configuration = Configuration(access_token=os.getenv("ACCESS_TOKEN"))
-genai.configure(api_key=os.getenv("API_KEY"))
+# handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
+# configuration = Configuration(access_token=os.getenv("ACCESS_TOKEN"))
+# genai.configure(api_key=os.getenv("API_KEY"))
 
 
 
