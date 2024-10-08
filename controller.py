@@ -4,16 +4,6 @@ from service import UserService
 from model import SessionLocal
 from pydantic import BaseModel
 import os
-from linebot.v3 import WebhookHandler
-from linebot.v3.messaging import (
-    Configuration,
-    ApiClient,
-    MessagingApi,
-    ReplyMessageRequest,
-    TextMessage,
-    ShowLoadingAnimationRequest
-)
-import google.generativeai as genai
 import json
 
 router = APIRouter()
