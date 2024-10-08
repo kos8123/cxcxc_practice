@@ -3,5 +3,3 @@ uvicorn
 sqlalchemy
 pydantic
 pymysql
-line-bot-sdk
-google-generativeai
